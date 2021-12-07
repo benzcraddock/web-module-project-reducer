@@ -42,7 +42,7 @@ const reducer = (state, action) => {
         case(CLEAR_DISPLAY):
             return ({
                 ...state,
-                total: state.total = 0
+                total: 0
             });
             
         default:

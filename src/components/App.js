@@ -11,14 +11,8 @@ import reducer, { initialState } from './../reducers';
 // import addOne action creator
 // import { addOne } from './../actions';
 
-// import applyNumber action creator
-import { applyNumber } from './../actions';
-
-// import changeOperation action creator
-import { changeOperation } from './../actions';
-
-// import clearDisplay action creator
-import { clearDisplay } from './../actions';
+// import action creator(s)
+import { applyNumber, changeOperation, clearDisplay } from './../actions';
 
 function App() {
   // useReducer hook to get access to the application state and the dispatch function
