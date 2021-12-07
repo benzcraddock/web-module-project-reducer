@@ -12,7 +12,12 @@ import reducer, { initialState } from './../reducers';
 // import { addOne } from './../actions';
 
 // import action creator(s)
-import { applyNumber, changeOperation, clearDisplay } from './../actions';
+import {
+  applyNumber,
+  changeOperation,
+  clearDisplay,
+  addMemory
+} from './../actions';
 
 function App() {
   // useReducer hook to get access to the application state and the dispatch function
@@ -39,6 +44,10 @@ function App() {
     dispatch(clearDisplay());
   }
 
+  const handleMemoryAdd = () => {
+    dispatch(addMemory());
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -56,7 +65,7 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
+              <CalcButton value={"M+"} onClick={handleMemoryAdd}/>
               <CalcButton value={"MR"}/>
               <CalcButton value={"MC"}/>
             </div>
