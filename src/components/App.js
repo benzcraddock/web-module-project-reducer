@@ -17,6 +17,9 @@ import { applyNumber } from './../actions';
 // import changeOperation action creator
 import { changeOperation } from './../actions';
 
+// import clearDisplay action creator
+import { clearDisplay } from './../actions';
+
 function App() {
   // useReducer hook to get access to the application state and the dispatch function
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -36,6 +39,10 @@ function App() {
 
   const handleOperationClick = (operation) => {
     dispatch(changeOperation(operation));
+  }
+
+  const handleClearClick = () => {
+    dispatch(clearDisplay());
   }
 
   return (
@@ -85,7 +92,7 @@ function App() {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={() => handleClearClick()}/>
             </div>
 
           </form>

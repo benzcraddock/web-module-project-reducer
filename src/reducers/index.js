@@ -1,4 +1,5 @@
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION } from './../actions';
+// add CLEAR_DISPLAY to import below
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY } from './../actions';
 
 export const initialState = {
     total: 100,
@@ -35,6 +36,13 @@ const reducer = (state, action) => {
             return ({
                 ...state,
                 operation: action.payload
+            });
+        
+        // add case for clear display that sets total value in state to 0
+        case(CLEAR_DISPLAY):
+            return ({
+                ...state,
+                total: state.total = 0
             });
             
         default:
