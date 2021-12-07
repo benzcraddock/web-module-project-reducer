@@ -4,6 +4,7 @@ export const CHANGE_OPERATION = "CHANGE_OPERATION";
 // create additional exports
 export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
 export const MEMORY_ADD = "MEMORY_ADD";
+export const MEMORY_RECALL = "MEMORY_RECALL";
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -25,4 +26,8 @@ export const clearDisplay = () => {
 // add action creators for memory
 export const addMemory = () => {
     return({type:MEMORY_ADD});
+}
+
+export const recallMemory = () => {
+    return({type:MEMORY_RECALL});
 }

@@ -16,7 +16,8 @@ import {
   applyNumber,
   changeOperation,
   clearDisplay,
-  addMemory
+  addMemory,
+  recallMemory
 } from './../actions';
 
 function App() {
@@ -48,6 +49,11 @@ function App() {
     dispatch(addMemory());
   }
 
+  // memory recall -> takes things that already exist like total and memory, does operations of those things together, puts in total and re renders new calculation
+  const handleMemoryRecall = () => {
+    dispatch(recallMemory());
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -66,7 +72,7 @@ function App() {
             
             <div className="row">
               <CalcButton value={"M+"} onClick={handleMemoryAdd}/>
-              <CalcButton value={"MR"}/>
+              <CalcButton value={"MR"} onClick={handleMemoryRecall}/>
               <CalcButton value={"MC"}/>
             </div>
 
